@@ -16,6 +16,7 @@ import com.android.volley.toolbox.Volley;
 import com.valdyrizki.e_futsal.adapter.Koneksi;
 import com.valdyrizki.e_futsal.adapter.RecyclerViewAdapter;
 import com.valdyrizki.e_futsal.model.Booking;
+import com.valdyrizki.e_futsal.Global.Fungsi;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -25,6 +26,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+
 
 public class HistoryBooking extends AppCompatActivity {
     Koneksi kon = new Koneksi();
@@ -36,6 +38,8 @@ public class HistoryBooking extends AppCompatActivity {
 
     SharedPreferences sharedPreferences;
     SharedPreferences.Editor editor;
+
+    Fungsi f =new Fungsi();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -68,11 +72,11 @@ public class HistoryBooking extends AppCompatActivity {
                             Booking bo= new Booking();
                             bo.setName(jsonObject.getString("name"));
                             bo.setNama_lapang(jsonObject.getString("nama_lapang"));
-                            bo.setJenis_lapang(jsonObject.getString("jenis_lapang"));
+                            bo.setJenis_lapang(f.getJenislapang(jsonObject.getInt("jenis_lapang")));
                             bo.setTgl_booking(jsonObject.getString("tgl_booking"));
                             bo.setWaktu_booking(jsonObject.getString("waktu_booking"));
                             bo.setHarga_lapang(jsonObject.getInt("harga_lapang"));
-                            bo.setStatus_booking(jsonObject.getString("status_booking"));
+                            bo.setStatus_booking(f.getStatusBooking(jsonObject.getInt("status_booking")));
                             bo.setGambar_lapang(jsonObject.getString("gambar_lapang"));
 
                             lstBooking.add(bo);
