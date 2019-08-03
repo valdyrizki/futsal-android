@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activities.AnimeActivity">
+
+    <android.support.design.widget.AppBarLayout
+        android:theme="@style/ThemeOverlay.AppCompat.Light"
+        android:layout_width="match_parent"
+        android:layout_height="300dp"
+        android:id="@+id/appbarlayout_id">
+
+        <android.support.design.widget.CollapsingToolbarLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/collapsingtoolbar_id"
+            app:layout_scrollFlags="exitUntilCollapsed|scroll"
+            app:title="Anime Title"
+            app:contentScrim="?attr/colorPrimary"
+            app:expandedTitleMarginStart="48dp"
+            app:expandedTitleMarginEnd="64dp"
+            >
+
+            <android.support.v7.widget.Toolbar
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                app:layout_collapseMode="pin"
+                android:theme="@style/ThemeOverlay.AppCompat.Light">
+
+            </android.support.v7.widget.Toolbar>
+
+            <android.support.constraint.ConstraintLayout
+                android:layout_width="356dp"
+                android:layout_height="200dp"
+                android:layout_margin="32dp"
+                android:layout_marginStart="0dp"
+                android:layout_marginEnd="0dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:layout_marginTop="0dp"
+                tools:padding="16dp">
+
+                <ImageView
+                    android:id="@+id/dt_thumbnail"
+                    android:layout_width="169dp"
+                    android:layout_height="180dp"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginTop="1dp"
+                    android:layout_marginBottom="1dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    tools:srcCompat="@tools:sample/avatars[0]" />
+
+                <TextView
+                    android:id="@+id/dt_tvnama"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginTop="8dp"
+                    android:fontFamily="sans-serif-condensed-medium"
+                    android:text="Lapang 1"
+                    android:textColor="#FFF"
+                    android:textSize="18sp"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toEndOf="@+id/dt_thumbnail"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/dt_tvstatus"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginEnd="8dp"
+                    android:text="Status Booking"
+                    android:textColor="#FFF"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/dt_thumbnail"
+                    app:layout_constraintTop_toBottomOf="@+id/dt_tvharga" />
+
+                <TextView
+                    android:id="@+id/dt_tvjenis"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginEnd="8dp"
+                    android:text="Sintetis"
+                    android:textColor="#FFF"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/dt_tvnama"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/dt_tvtgl"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginTop="8dp"
+                    android:text="2019-10-10"
+                    android:textColor="#FFF"
+                    app:layout_constraintStart_toEndOf="@+id/dt_thumbnail"
+                    app:layout_constraintTop_toBottomOf="@+id/dt_tvnama" />
+
+                <TextView
+                    android:id="@+id/dt_tvwaktu"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginEnd="8dp"
+                    android:text="13:00:00"
+                    android:textColor="#FFF"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/dt_tvtgl"
+                    app:layout_constraintTop_toTopOf="@+id/dt_tvtgl" />
+
+                <TextView
+                    android:id="@+id/dt_tvharga"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginEnd="8dp"
+                    android:text="Rp.50.000"
+                    android:textColor="#FFF"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/dt_thumbnail"
+                    app:layout_constraintTop_toBottomOf="@+id/dt_tvwaktu" />
+
+                <Button
+                    android:id="@+id/button6"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginEnd="8dp"
+                    android:background="@android:color/background_light"
+                    android:text="Tambah Testi"
+                    android:textColor="@android:color/background_dark"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/dt_thumbnail"
+                    app:layout_constraintTop_toBottomOf="@+id/dt_tvstatus" />
+
+            </android.support.constraint.ConstraintLayout>
+
+        </android.support.design.widget.CollapsingToolbarLayout>
+
+    </android.support.design.widget.AppBarLayout>
+
+    <android.support.v4.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="16dp"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+
+
+        <android.support.v7.widget.RecyclerView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+
+    </android.support.v4.widget.NestedScrollView>
+
+
+
+
+</android.support.design.widget.CoordinatorLayout>
